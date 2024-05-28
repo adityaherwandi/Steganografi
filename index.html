@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-Based Steganography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Web-Based Steganography</h1>
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('imageTab')">Image</button>
+            <button class="tab-button" onclick="openTab('audioTab')">Audio</button>
+            <button class="tab-button" onclick="openTab('videoTab')">Video</button>
+        </div>
+        <div id="imageTab" class="tab-content">
+            <h2>Steganography in Image</h2>
+            <input type="file" id="imageFile" accept="image/*">
+            <textarea id="imageMessage" placeholder="Type your message here..."></textarea>
+            <button onclick="hideMessageInImage()">Hide Message</button>
+            <button onclick="revealMessageFromImage()">Reveal Message</button>
+            <button onclick="saveImage()">Save Image</button>
+            <canvas id="imageCanvas" style="display: none;"></canvas>
+        </div>
+        <div id="audioTab" class="tab-content" style="display: none;">
+            <h2>Steganography in Audio</h2>
+            <input type="file" id="audioFile" accept="audio/*">
+            <textarea id="audioMessage" placeholder="Type your message here..."></textarea>
+            <button onclick="hideMessageInAudio()">Hide Message</button>
+            <button onclick="revealMessageFromAudio()">Reveal Message</button>
+            <button onclick="saveAudio()">Save Audio</button>
+        </div>
+        <div id="videoTab" class="tab-content" style="display: none;">
+            <h2>Steganography in Video</h2>
+            <input type="file" id="videoFile" accept="video/*">
+            <textarea id="videoMessage" placeholder="Type your message here..."></textarea>
+            <button onclick="hideMessageInVideo()">Hide Message</button>
+            <button onclick="revealMessageFromVideo()">Reveal Message</button>
+            <button onclick="saveVideo()">Save Video</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.1/jsmediatags.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
+</body>
+
+</html>
